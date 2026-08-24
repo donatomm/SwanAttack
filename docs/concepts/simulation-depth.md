@@ -1,5 +1,7 @@
 # Simulation Depth
 
+> **Historical (v20/v21-era).** This document describes machinery retired or revised in v22 — see CHANGELOG.md and docs/v22-behavior-map.md at the repo root. Kept for provenance; for current behavior start at the README.
+
 Simulation Depth is the second control axis (1-7), independent of Context Lens. It controls how many trajectories are explored and how aggressively each is tested. Default: 3.
 
 ## Levels
@@ -19,7 +21,8 @@ All trajectories. Two or more failure modes per path. Assumptions are explicitly
 ### Depth 5: ADVERSARIAL
 After selecting a recommended path, the system generates the strongest possible counterargument against it. If the recommendation does not survive its own counterargument, it is killed and survivors are re-ranked. Use when the recommendation needs to be bulletproof.
 
-### Depth 6: MONTE CARLO
+### Depth 6: CONSTRAINT SWEEP
+*(Renamed from "Monte Carlo" in v21.1 — the model enumerates constraint relaxations in prose; it does not run stochastic simulation.)*
 Constraint graph sweep. For each locked Hard or Structural constraint, simulate what happens if that constraint is relaxed. Report which single constraint relaxation produces the largest reduction in goal-distance. Identifies the highest-leverage constraint to challenge. Use when progress is blocked and you suspect a constraint is artificial.
 
 ### Depth 7: EXHAUSTIVE
