@@ -1,16 +1,17 @@
 ---
 name: eos-fact-check
 version: "v1.0.0"
-kernel_compat: "v20.4.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
-description: "Contradiction resolution across memory layers — audits auto-memory, Notion, Pieces, and Obsidian for conflicting, stale, or orphaned facts. Triggers on manual invoke or when eos-memory-mgmt detects staleness (ltm >= 5). Uses eos-recall-router for structured retrieval. Presents findings for user approval before executing resolutions."
+description: "Contradiction resolution across memory layers — audits auto-memory, Notion, Pieces, and Obsidian for conflicting, stale, or orphaned facts. Manual invoke only for now. Uses eos-recall-router for structured retrieval. Presents findings for user approval before executing resolutions."
 ---
+
+> **v22.5 status: adapted 2026-08-25.** Rule citations updated to the v22 renumbering (see `docs/v22-behavior-map.md`). The automatic staleness trigger that used to fire from `eos-memory-mgmt` is removed — that skill was not brought forward in this migration, and the `ltm` counter it read no longer exists in the runtime header. Run this manually until an equivalent staleness signal exists in v22.5.
 
 # EOS Fact Check Skill
 
 ## Trigger
 - **Manual invoke:** User says "fact check", "audit memory", "check for contradictions", or `/fact-check`.
-- **Auto-trigger:** When `eos-memory-mgmt` detects ltm staleness >= 5 exchanges since last Notion write.
 - **Session start (optional):** Can be invoked as part of drift detection if discrepancies are suspected.
 
 ## Autonomy
@@ -110,7 +111,7 @@ After resolutions: update MEMORY.md index if any files were added/removed/rename
 
 ## Cross-References
 - `eos-recall-router`: Used for structured retrieval in F1.
-- `eos-memory-mgmt` M4 (Writeback Policy): Staleness counter (ltm >= 5) triggers this skill.
-- Kernel Rule 5 (Regression Lock): Contradictions on locked variables are highest severity — locked variable regression.
-- Kernel Rule 4 (Contradiction Integrity): This skill extends contradiction detection to the persistence layer.
+- `eos-memory-mgmt`: not part of this migration. Its staleness counter used to trigger this skill automatically; that link is currently broken. Restore it only once a replacement staleness signal exists in v22.5.
+- Kernel Rule 4 (Regression Lock): Contradictions on locked variables are highest severity — locked variable regression.
+- Kernel Rule 3 (Contradiction & Position Integrity): This skill extends contradiction detection to the persistence layer.
 - Auto-memory system: This skill is the maintenance layer for the auto-memory files.

@@ -1,10 +1,12 @@
 ---
 name: eos-recall-router
 version: "v1.0.0"
-kernel_compat: "v20.4.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
 description: "Intent-routed memory retrieval — classifies recall queries by type and routes to the optimal persistence layer. Replaces ad-hoc retrieval with structured dispatch. Triggers on any memory retrieval need (internal to other skills, explicit user recall, CONTINUE keyword). Pattern: classify → route to primary layer → fallback to secondary → escalate to cross-layer."
 ---
+
+> **v22.5 status: adapted 2026-08-25.** No content change — this skill never depended on a retired mechanism or a numbered kernel rule. Only `kernel_compat` was bumped.
 
 # EOS Recall Router Skill
 

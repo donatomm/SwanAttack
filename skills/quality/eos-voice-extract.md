@@ -1,10 +1,12 @@
 ---
 name: eos-voice-extract
 version: "v1.1.0"
-kernel_compat: "v20.5.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
 description: "Session voice fact extraction — scans conversation for uncaptured directives, preferences, habits, beliefs, and goals. Classifies using CORE-derived taxonomy. Cross-layer deduplication checks all populated persistence layers (auto-memory, Notion, Pieces) before writing. Presents extracted facts for user approval before writing. Triggers at session end, on CONTINUE keyword, or manual invoke."
 ---
+
+> **v22.5 status: adapted 2026-08-25.** One stale rule citation updated (see `docs/v22-behavior-map.md`). Nothing else in this skill depended on a retired mechanism.
 
 # EOS Voice Extract Skill
 
@@ -135,4 +137,4 @@ Voice extraction complete:
 - `eos-memory-mgmt`: Voice-extract handles conversational fact capture. Memory-mgmt handles decision-lock event writes to Notion. Different triggers, complementary coverage.
 - `eos-fact-check`: After voice-extract writes new facts, fact-check can verify consistency across layers.
 - Auto-memory system: This skill is the intake mechanism for auto-memory. Fact-check is the maintenance mechanism.
-- Kernel Rule 5 (Regression Lock): Extracted facts that reference locked variables should note the lock status.
+- Kernel Rule 4 (Regression Lock): Extracted facts that reference locked variables should note the lock status.

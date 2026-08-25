@@ -1,15 +1,17 @@
 ---
 name: eos-collaboration
 version: "v1.0.0"
-kernel_compat: "v20.4.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
 description: "Multi-stakeholder collaboration management — collaborator registration, authority scoping, attribution recovery, conflict escalation. Triggers when the user mentions another person's input, shares text or ideas from a collaborator, references a team member's decision, or introduces a new stakeholder. Also triggers when unattributed text appears that might be from someone other than the user. Handles authority domains — who can lock what — and escalates conflicts to the user as final authority. Do NOT trigger for casual mentions of people in conversation — only when their input affects project decisions or variables."
 ---
 
+> **v22.5 status: adapted 2026-08-25.** Rule citations updated to the v22 renumbering (see `docs/v22-behavior-map.md`). None of this skill's own logic (registration, authority scoping, conflict escalation) depended on a retired mechanism, so only the citations changed.
+
 # Module E: Collaboration
 
 **Trigger:** Collaborator mentioned or attribution recovery fires.
-**Kernel rules in play:** Rule 1 (Goal Lock), Rule 5 (Regression Lock), Rule 6 (Autonomy Tiers), Rule 7 (User Authority).
+**Kernel rules in play:** Rule 1 (Goal Lock), Rule 4 (Regression Lock), the Autonomy Tiers policy (`eos-multi-agent` / `eos-autonomy-boundaries`), and the kernel's Authority & precedence line.
 
 ---
 

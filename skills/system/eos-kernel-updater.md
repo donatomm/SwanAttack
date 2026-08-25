@@ -1,13 +1,13 @@
 ---
 name: eos-kernel-updater
 version: v1.1.0
-kernel_compat: "v20.5.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
 description: Proposes CLAUDE.md kernel edits based on session outcomes. Tier 3 — requires user approval for every change.
 trigger: session-end, explicit request ("update kernel", "propose kernel change", "self-modify")
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 status: adapted 2026-08-25.** The two evidence signals that used to read CCI-G are rewritten against the v22.5 header's `conf` field, and the sim-depth evidence signal is rewritten against the header's named `lens` field. Section-name examples updated to match the actual v22.5 kernel section names. See `docs/v22-behavior-map.md` for what changed and why.
 
 # EOS Kernel Updater
 
@@ -18,7 +18,7 @@ Analyzes session outcomes and proposes targeted CLAUDE.md edits. Never auto-edit
 - End of a substantive session (3+ exchanges with goal-locked work)
 - User explicitly asks: "update kernel", "propose kernel change", "self-modify", "what should change in EOS"
 - After a session where the user corrected the same behavior twice (regression pattern detected)
-- After a session where CCI-G never exceeded 50% (system underperformance signal)
+- After a session where `conf` stayed LOW across multiple exchanges despite active, goal-locked work (system underperformance signal)
 
 ## Step 1: Gather Evidence
 
@@ -26,8 +26,8 @@ Review the current session for:
 
 1. **Corrections received** — user told you to do something differently. Each correction is a candidate for a kernel rule or generation target update.
 2. **Position moves** — places where `pos:moved` appeared in the header. What argument caused the move? Is there a pattern?
-3. **CCI-G trajectory** — did it rise steadily or stall? If stalled, what was blocking?
-4. **Sim-depth mismatches** — were you operating at the wrong depth for the task? Did the user have to ask for deeper simulation?
+3. **Confidence trajectory** — did `conf` move toward HIGH as open assumptions closed, or stall at LOW? If it stalled, what was blocking?
+4. **Lens mismatches** — did the declared `lens` (the named layer of work) match what the task actually needed? Did the user have to redirect you to a different layer?
 5. **Attractor basin failures** — did you default to conventional output when user context should have dominated?
 6. **Rule conflicts** — did any rules contradict each other during this session?
 7. **Memory gaps** — did you lack context that should have been in the USER MODEL?
@@ -37,7 +37,7 @@ Review the current session for:
 Before classifying proposals, query Notion for prior `Kernel Update Session` log entries. Build a per-rule patch count:
 
 1. For each rule/section in CLAUDE.md, count how many times it has been the target of an approved patch across all logged sessions.
-2. Store as working context: `patch_history: { "Rule 2": 3, "Identity/sarcasm": 1, ... }`
+2. Store as working context: `patch_history: { "Rule 2 (Grounding)": 3, "Identity/sarcasm": 1, ... }`
 3. This count is used in Step 2 (STRUCTURAL_REVIEW detection) and shared with `eos-metacognition` F3 (anti-churn check).
 
 If Notion is unavailable (Tier C), skip — patch history is unknown. Proceed with standard classification but note: `⚠️ Patch history unavailable — churn detection disabled for this session.`
@@ -63,7 +63,7 @@ KERNEL UPDATE PROPOSAL [X of N]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Type:     [RULE_ADD | RULE_MODIFY | PARAM_CHANGE | IDENTITY_UPDATE | USER_MODEL_UPDATE]
-Section:  [exact section name in CLAUDE.md, e.g. "Rule 2: Generation Frame"]
+Section:  [exact section name in CLAUDE.md, e.g. "Rule 2: Grounding"]
 Line:     [approximate line number or "after line X"]
 
 Current:  [what exists now — quote the relevant text, or "nothing" for additions]

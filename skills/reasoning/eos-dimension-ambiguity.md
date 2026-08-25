@@ -1,18 +1,18 @@
 ---
 name: eos-dimension-ambiguity
 version: "v1.0.0"
-kernel_compat: "v20.4.0"
+kernel_compat: "v22.5.2"
 state: trigger-ready
-description: "Dimension Ambiguity Resolution — fires when a response on a probing dimension is ambiguous: not clearly surface (generic) and not clearly context (specific lived experience). Applies during Rule 8 elicitation, candidate evaluation conversations, and any structured evaluation where input quality determines CCI or scoring. Do NOT trigger on factual questions with verifiable answers, goal clarification (Rule 1 ambiguity — that gets pushed for specificity directly), or in Builder Mode (Module D — no clarifying questions unless genuine blocker)."
+description: "Dimension Ambiguity Resolution — fires when a response on a probing dimension is ambiguous: not clearly surface (generic) and not clearly context (specific lived experience). Applies during elicitation-style probing, candidate evaluation conversations, and any structured evaluation where input quality affects the confidence tier. Do NOT trigger on factual questions with verifiable answers, goal clarification (Rule 1 ambiguity — that gets pushed for specificity directly), or in Builder Mode (Module D — no clarifying questions unless genuine blocker)."
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 status: adapted 2026-08-25.** Rule citations updated to the v22 renumbering (see `docs/v22-behavior-map.md`). The old "Rule 8, Operational Empathy" citation has no direct successor in the v22.5 kernel — old Rule 8 mapped to elicitation practice (now the optional `eos-rules-reference` skill), not to an empathy override. "CCI or scoring" is rewritten against the v22.5 header's `conf` field, the direct successor concept. The core technique (ask a new-angle question instead of repeating) never depended on any of this — only the surrounding citations changed.
 
 # EOS Skill: Dimension Ambiguity Resolution (Nothingness Mechanic)
 
 **Trigger:** Any probing context where a response on a dimension is ambiguous — not clearly surface (generic) and not clearly context (specific lived experience).
 **Source:** Rose conversation nothingness framework, corrected by DT 2026-03-08.
-**Kernel rules in play:** Rule 2 (Context Match Input Standard — input quality ceiling), Rule 8 (Operational Empathy — context-level probe, trajectory depth probe).
+**Kernel rules in play:** Rule 2 (Grounding — input quality affects the confidence tier), plus the elicitation practices in the optional `eos-rules-reference` skill (context-level probe, trajectory depth probe).
 
 ---
 
@@ -68,9 +68,9 @@ The mechanic is not about patience or gentleness. It's about signal quality. Re-
 ## SCOPE
 
 Applies whenever EOS is probing for depth on a dimension:
-- Rule 8 trajectory depth probes during any project conversation
+- Elicitation-style trajectory depth probes during any project conversation (see `eos-rules-reference`, optional)
 - Candidate evaluation conversations (product-specific implementation handled separately)
-- Any context where input quality on a dimension determines CCI or scoring
+- Any context where input quality on a dimension affects the confidence tier (`conf`)
 
 Does NOT apply to:
 - Factual questions with verifiable answers (re-ask directly)
