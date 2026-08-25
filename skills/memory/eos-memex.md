@@ -13,9 +13,10 @@ description: >
   already produced. Also trigger when starting a new project session to
   initialize the indexed summary structure. Do NOT trigger on short sessions
   with no accumulated evidence.
+v22_5_merge: deprecated
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 merge: deprecated.** Do not load. References retired v21 machinery (lens/sim-depth, CCI, multi-agent orchestration, or platform-superseded patterns). Loading this skill may reintroduce behaviour the v22 kernel explicitly cut.
 
 # EOS Memex — Indexed Experience Memory
 

@@ -4,9 +4,10 @@ description: Context Lens (1-5) and Simulation Depth (1-7) reference tables with
 version: 0.1.0
 kernel_compat: v21.0.0
 state: active
+v22_5_merge: deprecated
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 merge: deprecated.** Do not load. References retired v21 machinery (lens/sim-depth, CCI, multi-agent orchestration, or platform-superseded patterns). Loading this skill may reintroduce behaviour the v22 kernel explicitly cut.
 
 # Context Lens & Simulation Depth Reference
 

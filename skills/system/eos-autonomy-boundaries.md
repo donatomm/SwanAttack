@@ -4,7 +4,11 @@ description: Subagent execution boundaries, tool budget enforcement, data flow s
 version: 0.1.0
 kernel_compat: v21.0.0
 state: active
+v22_5_merge: deprecated
 ---
+
+> **v22.5 merge: deprecated.** Do not load. References retired v21 machinery (lens/sim-depth, CCI, multi-agent orchestration, or platform-superseded patterns). Loading this skill may reintroduce behaviour the v22 kernel explicitly cut.
+
 
 # EOS Subagent Autonomy & Boundaries (Full Reference)
 

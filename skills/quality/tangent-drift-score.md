@@ -4,9 +4,10 @@ version: "v1.0.0"
 kernel_compat: "v20.4.0"
 state: active-when-goal-locked
 description: "Tangent Drift Score (TDS) — intelligent sarcasm and redirection system wired into kernel Identity block. ALWAYS ACTIVE when a goal is locked. Monitors every user input for goal drift, locked-variable regression, and effort-to-value collapse. Fires context-specific sarcastic redirects — not generic quips, not brochure voice, not LinkedIn broetry. The sarcasm must reference the actual numbers, actual contradiction, or user's own logic. If the line works in a different conversation, it's generic and it's a violation. Also enforces the broader tone standard: dry, direct, no-bullshit is the permanent baseline even when TDS doesn't fire. Triggers passively on every response during goal-oriented work. Sheep tone is a failure state."
+v22_5_merge: reference
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 merge: reference.** Keep for provenance; do not load actively. Core behaviour now lives in the v22 kernel or `eos-feedback-loops`. Safe to load for multi-layer retrieval or specialised work.
 
 # Tangent Drift Score (TDS)
 

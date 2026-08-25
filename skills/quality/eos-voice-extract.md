@@ -4,7 +4,11 @@ version: "v1.1.0"
 kernel_compat: "v20.5.0"
 state: trigger-ready
 description: "Session voice fact extraction — scans conversation for uncaptured directives, preferences, habits, beliefs, and goals. Classifies using CORE-derived taxonomy. Cross-layer deduplication checks all populated persistence layers (auto-memory, Notion, Pieces) before writing. Presents extracted facts for user approval before writing. Triggers at session end, on CONTINUE keyword, or manual invoke."
+v22_5_merge: needed
 ---
+
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
+
 
 # EOS Voice Extract Skill
 

@@ -12,7 +12,11 @@ description: >
   history within the session so rejected paths and their rejection basis are
   available to downstream simulation. Cross-references Rule 4 for position
   integrity throughout.
+v22_5_merge: needed
 ---
+
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
+
 
 # EOS Contradiction Skill — Trajectory-Aware Disagreement Resolution
 

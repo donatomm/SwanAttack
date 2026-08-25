@@ -4,9 +4,10 @@ version: "v1.2.0"
 kernel_compat: "v21.0.0"
 state: trigger-ready
 description: "Memory hierarchy management — Notion as primary persistence, Pieces as supplementary ambient capture, writeback policy, Spoke/Hub structure. Triggers on session start (persistence detection — HARD GATE), project load, any critical state change (goal shifts, I-tagged decisions, new locked variables, agreements, concessions). Also triggers when reading or writing to Notion Spokes, loading project state, or managing session continuity."
+v22_5_merge: needed
 ---
 
-> **v22 status: legacy.** This skill predates the v22 evidence release and references machinery the kernel retired (see `docs/v22-behavior-map.md`) — lens/sim-depth axes, CCI scoring, or v21 rule numbering. It still loads as a standalone extension, but using it may reintroduce retired behavior. Revalidate against the v22 kernel before updating `kernel_compat`.
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
 
 # EOS Memory Management Skill
 

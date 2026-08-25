@@ -4,7 +4,11 @@ version: "1.0.0"
 kernel_compat: v22
 state: active
 description: "Feedback loops on the collaboration itself: rejection pattern mining, a prediction ledger with accuracy review, reversibility tagging, a correction ledger with cross-session escalation, and the no-re-ask probe technique. Triggers on: 3+ rejected recommendations in a session; any recommendation or irreversible decision (log a prediction); user confirming/refuting a prior prediction; any user correction; ambiguous answers during probing; 'prediction accuracy', 'outcome review', 'what have you learned'."
+v22_5_merge: needed
 ---
+
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
+
 
 # EOS Feedback Loops
 

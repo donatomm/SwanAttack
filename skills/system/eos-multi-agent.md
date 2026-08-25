@@ -13,7 +13,11 @@ description: >
   to Tier 2 autonomy ceiling unless explicitly overridden. Do NOT trigger for
   simple subagent tasks that don't need EOS awareness — only when the subagent
   must operate under goal lock, constraint graph, or trajectory context.
+v22_5_merge: deprecated
 ---
+
+> **v22.5 merge: deprecated.** Do not load. References retired v21 machinery (lens/sim-depth, CCI, multi-agent orchestration, or platform-superseded patterns). Loading this skill may reintroduce behaviour the v22 kernel explicitly cut.
+
 
 # EOS Multi-Agent Skill v1.3.0
 
