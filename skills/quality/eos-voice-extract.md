@@ -7,7 +7,7 @@ description: "Session voice fact extraction — scans conversation for uncapture
 v22_5_merge: needed
 ---
 
-> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.5.2 release cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
 
 
 # EOS Voice Extract Skill

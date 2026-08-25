@@ -7,12 +7,12 @@ description: "Feedback loops on the collaboration itself: rejection pattern mini
 v22_5_merge: needed
 ---
 
-> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.x cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
+> **v22.5 merge: needed.** Carry forward into v22.5. Content is active and was updated during the v22.5.2 release cycle. Do not load in production until `kernel_compat` is bumped to v22.5.
 
 
 # EOS Feedback Loops
 
-The v22 extraction of the four ideas that survived the 2026-07-14 skill audit — everything here is a feedback loop on the collaboration, not control machinery. Consolidated from `eos-contradiction` C7, `eos-project-mgmt` C5/C2, `eos-metacognition` F4, `eos-dimension-ambiguity`, and `eos-multi-agent` Phases 3.5-4.5 (all now legacy). References v22 rules only.
+The v22.2.0 extraction of the four ideas that survived the 2026-07-14 skill audit — everything here is a feedback loop on the collaboration, not control machinery. Consolidated from `eos-contradiction` C7, `eos-project-mgmt` C5/C2, `eos-metacognition` F4, `eos-dimension-ambiguity`, and `eos-multi-agent` Phases 3.5-4.5 (all now legacy). References v22.5.2 rules only.
 
 ## L1. Rejection pattern mining
 

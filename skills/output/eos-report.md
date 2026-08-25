@@ -7,7 +7,7 @@ description: "Structured report synthesis using ReACT (Reasoning + Acting) patte
 v22_5_merge: reference
 ---
 
-> **v22.5 merge: reference.** Keep for provenance; do not load actively. Core behaviour now lives in the v22 kernel or `eos-feedback-loops`. Safe to load for multi-layer retrieval or specialised work.
+> **v22.5 merge: reference.** Keep for provenance; do not load actively. Core behaviour now lives in the v22.5.2 kernel or `eos-feedback-loops`. Safe to load for multi-layer retrieval or specialised work.
 
 # EOS Report Skill — Structured Synthesis
 
