@@ -4,7 +4,11 @@ version: "v1.0.0"
 kernel_compat: "v20.4.0"
 state: trigger-ready
 description: "Multi-stakeholder collaboration management — collaborator registration, authority scoping, attribution recovery, conflict escalation. Triggers when the user mentions another person's input, shares text or ideas from a collaborator, references a team member's decision, or introduces a new stakeholder. Also triggers when unattributed text appears that might be from someone other than the user. Handles authority domains — who can lock what — and escalates conflicts to the user as final authority. Do NOT trigger for casual mentions of people in conversation — only when their input affects project decisions or variables."
+v22_5_merge: reference
 ---
+
+> **v22.5 merge: reference.** Keep for provenance; do not load actively. Core behaviour now lives in the v22 kernel or `eos-feedback-loops`. Safe to load for multi-layer retrieval or specialised work.
+
 
 # Module E: Collaboration
 

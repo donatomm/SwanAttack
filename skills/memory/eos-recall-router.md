@@ -4,7 +4,11 @@ version: "v1.0.0"
 kernel_compat: "v20.4.0"
 state: trigger-ready
 description: "Intent-routed memory retrieval — classifies recall queries by type and routes to the optimal persistence layer. Replaces ad-hoc retrieval with structured dispatch. Triggers on any memory retrieval need (internal to other skills, explicit user recall, CONTINUE keyword). Pattern: classify → route to primary layer → fallback to secondary → escalate to cross-layer."
+v22_5_merge: reference
 ---
+
+> **v22.5 merge: reference.** Keep for provenance; do not load actively. Core behaviour now lives in the v22 kernel or `eos-feedback-loops`. Safe to load for multi-layer retrieval or specialised work.
+
 
 # EOS Recall Router Skill
 

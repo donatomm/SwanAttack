@@ -21,7 +21,7 @@ This kernel's design follows a controlled test (2026-07-14; design, data, and li
 
 Consequences applied in v22: prose USER MODEL; lens/sim-depth axes and CCI percentage retired; runtime header carries only stateable facts. n was small (8 tasks, one run) — these are directional results that shaped defaults, not laws. Re-test before re-adding structure.
 
----
+## TWO AXIOMS
 
 ## USER MODEL
 
